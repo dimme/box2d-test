@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Box2D/Box2D.h>
 
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController <UIAccelerometerDelegate> {
     b2World* world;
 	NSTimer *tickTimer;
+    b2Vec2 gravity;
 }
 
 @end

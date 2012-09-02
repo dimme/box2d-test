@@ -6,19 +6,38 @@
 //  Copyright (c) 2012 Dimitrios Vlastaras. All rights reserved.
 //
 
-#define PTM_RATIO 16
+#define PTM_RATIO 200
 
 #import "ViewController.h"
 
 @implementation ViewController
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+-(void)accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration {
+    //NSLog(@"%f x %f",acceleration.x,acceleration.y);
+    gravity.Set(acceleration.x*10, acceleration.y*10);
+    world->SetGravity(gravity);
+}
+
+#define kAccelerometerFrequency        100.0 //Hz
+-(void)configureAccelerometer
+{
+    UIAccelerometer*  theAccelerometer = [UIAccelerometer sharedAccelerometer];
+    theAccelerometer.updateInterval = 1 / kAccelerometerFrequency;
+    
+    theAccelerometer.delegate = self;
+    // Delegate events begin immediately.
+}
 
 -(void)createPhysicsWorld
 {
 	CGSize screenSize = self.view.bounds.size;
     
 	// Define the gravity vector.
-	b2Vec2 gravity;
-	gravity.Set(0.0f, -9.81f);
+	gravity.Set(0.0f, -9.82f);
     
 	// Do we want to let bodies sleep?
 	// This will speed up the physics simulation
@@ -73,6 +92,7 @@
     
 	// Tell the physics world to create the body
 	b2Body *body = world->CreateBody(&bodyDef);
+    body->SetSleepingAllowed(false);
     
 	// Define another box shape for our dynamic body.
 	b2PolygonShape dynamicBox;
@@ -131,6 +151,7 @@
 {
     [super viewDidLoad];
 
+    [self configureAccelerometer];
     [self createPhysicsWorld];
     
 	for (UIView *oneView in self.view.subviews)
@@ -148,9 +169,13 @@
     // Release any retained subviews of the main view.
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self becomeFirstResponder];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)dealloc
