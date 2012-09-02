@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Box2D/Box2D.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    b2World* world;
+	NSTimer *tickTimer;
+}
 
 @end
