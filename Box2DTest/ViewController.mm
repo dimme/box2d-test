@@ -92,7 +92,6 @@
     
 	// Tell the physics world to create the body
 	b2Body *body = world->CreateBody(&bodyDef);
-    body->SetSleepingAllowed(false);
     
 	// Define another box shape for our dynamic body.
 	b2PolygonShape dynamicBox;

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74BF8C261630575E00D909A7 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74BF8C251630575E00D909A7 /* Default-568h@2x.png */; };
 		74E33E3015F3D7A70045E2ED /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E33E2F15F3D7A70045E2ED /* UIKit.framework */; };
 		74E33E3215F3D7A70045E2ED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E33E3115F3D7A70045E2ED /* Foundation.framework */; };
 		74E33E3415F3D7A70045E2ED /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E33E3315F3D7A70045E2ED /* CoreGraphics.framework */; };
@@ -66,6 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74BF8C251630575E00D909A7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		74E33E2B15F3D7A70045E2ED /* Box2DTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Box2DTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E33E2F15F3D7A70045E2ED /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		74E33E3115F3D7A70045E2ED /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -234,6 +236,7 @@
 		74E33E3615F3D7A70045E2ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				74BF8C251630575E00D909A7 /* Default-568h@2x.png */,
 				74E33E3715F3D7A70045E2ED /* Box2DTest-Info.plist */,
 				74E33E3815F3D7A70045E2ED /* InfoPlist.strings */,
 				74E33E3B15F3D7A80045E2ED /* main.mm */,
@@ -455,6 +458,7 @@
 				74E33E4615F3D7A80045E2ED /* ViewController.xib in Resources */,
 				74E33EB315F3D7EC0045E2ED /* Box2DConfig.cmake in Resources */,
 				74E33EB415F3D7EC0045E2ED /* CMakeLists.txt in Resources */,
+				74BF8C261630575E00D909A7 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,6 +637,7 @@
 				74E33E4B15F3D7A80045E2ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
